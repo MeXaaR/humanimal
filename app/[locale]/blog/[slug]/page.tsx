@@ -1,12 +1,13 @@
 import { getLocale } from "next-intl/server";
 import { fetchData } from "@/utils/fetchData";
-import { Metadata, ResolvingMetadata } from "next";
+import { InferGetStaticPropsType, Metadata, ResolvingMetadata } from "next";
 
 import "./style.css";
 import { PostHero } from "@/components/hero/post_hero";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { SITE_NAME, SITE_URL } from "@/data/constants";
 import { Sources } from "@/components/sources/sources";
+import { getStaticProps } from "next/dist/build/templates/pages";
 
 async function getSinglePost(locale: string, slug: string) {
   const data = await fetchData(`query SinglePost {
@@ -55,6 +56,8 @@ async function getSinglePost(locale: string, slug: string) {
       }`);
   return data?.post;
 }
+
+type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 type Props = {
   params: {
@@ -123,7 +126,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function SinglePostPage({ params }: Props) {
+export default async function SinglePostPage({ params }: PageProps) {
   const locale = await getLocale();
   const { slug } = await params;
   const post = await getSinglePost(locale, slug);
