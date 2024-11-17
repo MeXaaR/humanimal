@@ -1,10 +1,5 @@
-import { SearchParams } from "next/dist/server/request/search-params";
-import AllPosts from "./all-posts/page";
+import { redirect, RedirectType } from "next/navigation";
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  return <AllPosts searchParams={searchParams} />;
+export default function BlogPage() {
+  redirect("/blog/explore", RedirectType.replace);
 }
