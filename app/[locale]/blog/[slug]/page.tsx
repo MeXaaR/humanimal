@@ -59,17 +59,9 @@ async function getSinglePost(locale: string, slug: string) {
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-type Props = {
-  params: {
-    locale: string;
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
 // Generate metadata for the page
 export async function generateMetadata(
-  { params }: Props,
+  { params }: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const locale = await getLocale();
