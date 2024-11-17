@@ -63,7 +63,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const locale = await getLocale();
-  const post = await getSinglePost(locale, params.slug);
+  const { slug } = await params;
+  const post = await getSinglePost(locale, slug);
 
   // optionally get parent metadata
   const previousImages = (await parent).openGraph?.images || [];
