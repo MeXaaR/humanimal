@@ -61,7 +61,7 @@ type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 // Generate metadata for the page
 export async function generateMetadata(
-  { params }: PageProps,
+  { params }: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const locale = await getLocale();
