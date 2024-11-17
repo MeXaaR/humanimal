@@ -1,0 +1,32 @@
+.footer {
+  border-top: 1px solid #eee;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-unstyled li {
+  margin-bottom: 0.75rem;
+}
+
+.list-unstyled a {
+  transition: color 0.2s ease;
+}
+
+.list-unstyled a:hover {
+  color: #485fc7 !important;
+}
+
+.buttons .button {
+  margin: 0 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    justify-content: flex-start !important;
+    margin-top: 1rem;
+  }
+} 

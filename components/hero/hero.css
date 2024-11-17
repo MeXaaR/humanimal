@@ -1,0 +1,33 @@
+.main-hero .hero {
+  margin-top: 3rem;
+  border-radius: var(--bulma-radius-medium);
+}
+
+.main-hero .hero-body .title {
+  font-size: 3.5rem;
+}
+
+.main-hero .hero-body .subtitle {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .main-hero .hero {
+    /* margin: 0.5rem; */
+  }
+}
+
+.category-hero .hero-body .title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.post-hero .hero-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero:not(.box) {
+  border-bottom: 1px solid var(--bulma-light)
+}

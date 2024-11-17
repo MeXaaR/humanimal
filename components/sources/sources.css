@@ -1,0 +1,26 @@
+.sources-section {
+  border-top: 1px solid #eaeaea;
+  padding-top: 2rem;
+}
+
+.sources-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sources-section li {
+  margin-bottom: 0.75rem;
+}
+
+.sources-section a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.sources-section a:hover {
+  text-decoration: underline;
+}
+
+.sources-section em {
+  font-style: italic;
+} 

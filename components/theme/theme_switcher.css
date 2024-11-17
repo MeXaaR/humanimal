@@ -1,0 +1,98 @@
+.theme-switcher {
+  position: relative;
+  display: inline-flex;
+}
+
+.theme-cycle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--bulma-text);
+  border-radius: var(--bulma-radius);
+}
+
+.theme-cycle-button:hover {
+  background-color: var(--bulma-background-hover);
+}
+
+.theme-cycles {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.theme-cycle-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-cycle-icon.is-active {
+  opacity: 1;
+}
+
+.theme-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--bulma-scheme-main);
+  border: 1px solid var(--bulma-border);
+  border-radius: var(--bulma-radius);
+  padding: 0.5rem;
+  display: none;
+  box-shadow: var(--bulma-shadow);
+  min-width: 150px;
+}
+
+.theme-menu.is-active {
+  display: block;
+}
+
+.theme-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--bulma-text);
+  border-radius: var(--bulma-radius-small);
+}
+
+.theme-menu-item:hover {
+  background-color: var(--bulma-background-hover);
+}
+
+.theme-menu-item.is-active {
+  background-color: var(--bulma-link);
+  color: white;
+}
+
+.theme-menu-item .icon {
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Icon colors */
+.is-sun .icon {
+  color: var(--bulma-warning);
+}
+
+.is-moon .icon {
+  color: var(--bulma-info);
+}
+
+.is-system .icon {
+  color: var(--bulma-success);
+}
+
+.theme-menu-item.is-active .icon {
+  color: white;
+} 

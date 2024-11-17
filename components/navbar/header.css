@@ -1,0 +1,65 @@
+:root {
+  --humanimal-header-margin: 0.5rem;
+}
+
+.navbar {
+  /* background-color: var(--bulma-primary-on-scheme); */
+}
+
+
+.navbar-item, .navbar-item * {
+  font-size: var(--bulma-font-size-normal);
+  font-weight: bold;
+}
+
+.navbar-item:hover {
+  /* color: var(--bulma-primary); */
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-toggle:checked + .navbar-menu {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+    border-radius: var(--bulma-radius-medium);
+  }
+
+  .navbar-burger {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: 3.25rem;
+    height: 3.25rem;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .navbar-burger span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 16px;
+    background-color: currentColor;
+  }
+
+  .navbar-burger span:nth-child(1) { top: calc(50% - 6px); }
+  .navbar-burger span:nth-child(2) { top: calc(50% - 1px); }
+  .navbar-burger span:nth-child(3) { top: calc(50% + 4px); }
+
+} 

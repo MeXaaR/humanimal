@@ -1,0 +1,14 @@
+.type-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.type-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}

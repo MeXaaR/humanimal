@@ -1,0 +1,45 @@
+{
+    "HomePage": {
+        "title": "Become a Humanimal!",
+        "subtitle": "Humanimal guides you on a scientific and natural exploration of well-being. Join us for advice, training and practices that respect your body and release your natural potential.",
+        "latest": "Latest articles",
+        "featured": "Featured articles"
+    },
+    "Navigation": {
+        "home": "Home",
+        "blog": "Blog",
+        "explore_the_blog": "Explore the Blog",
+        "browse_all_articles": "Browse All Articles",
+        "browse_subjects": "Browse Subjects",
+        "newsletter": "Newsletter",
+        "about": "About",
+        "content": "Content",
+        "legal": "Legal",
+        "copyright": "All rights reserved.",
+        "fr": "Français",
+        "en": "English"
+    },
+    "PostCard": {
+        "postedBy": "Posted by",
+        "postedOn": "Posted on"
+    },
+    "AllPostsPage": {
+        "title": "All Posts of the",
+        "subtitle": "Humanimal Blog",
+        "newest_first": "Newest first",
+        "oldest_first": "Oldest first"
+    },
+    "ExplorePage": {
+        "title": "Explore Humanimal",
+        "subtitle": "And its categories"
+    },
+    "PostPage": {
+        "content": "Content",
+        "sources": "Sources & Articles"
+    },
+    "Pages": {
+        "home": "Home",
+        "explore_blog": "Explore the Blog",
+        "all_posts": "All Blog posts"
+    }
+}

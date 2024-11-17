@@ -1,0 +1,27 @@
+.category-list-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: var(--bulma-light-scheme);
+  padding: 1rem;
+}
+
+.category-list-item:hover {
+  transform: scale(1.05);
+}
+
+.category-list-item .image {
+  margin-bottom: 1rem;
+  transition: filter 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-list-item:hover .image {
+  /* filter: invert(1); */
+}
