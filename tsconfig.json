@@ -37,7 +37,5 @@
   "exclude": [
     "node_modules"
   ],
-  "rules": {
-    "@typescript-eslint/no-explicit-any": "off"
-  }
+  "rules": {}
 }

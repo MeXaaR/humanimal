@@ -61,6 +61,7 @@ type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 // Generate metadata for the page
 export async function generateMetadata(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   { params }: any,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
