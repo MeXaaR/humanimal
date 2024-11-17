@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { LOCALES } from "@/data/constants";
 import { PageTransition } from "@/components/layouts/page_transition";
+import { Viewport } from "next";
 
 import moment from "moment";
 import "moment/locale/fr";
@@ -22,6 +23,17 @@ export const generateMetadata = generateSiteMetadata;
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
 
 export default async function RootLayout({
   children,

@@ -2,10 +2,10 @@ import AllPostsHero from "@/components/hero/all_posts_hero";
 import SortPostsBy from "@/components/sorting/sort_posts_by";
 import PostListWrapper from "@/components/posts/post_list_wrapper";
 import "./style.css";
-import { SearchParams } from "next/dist/server/request/search-params";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { SITE_NAME } from "@/data/constants";
+import { PageProps } from "@/types/pages";
 
 // Generate metadata for the page
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,11 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function AllPosts({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
+export default async function AllPosts({ searchParams }: PageProps) {
   const params = await searchParams;
   return (
     <div className="all-posts-container">

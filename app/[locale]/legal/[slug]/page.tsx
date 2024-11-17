@@ -6,6 +6,7 @@ import { LegalPage } from "@/types/posts";
 import { Metadata } from "next";
 import { SITE_NAME } from "@/data/constants";
 import SimpleHero from "@/components/hero/simple_hero";
+import { PageProps } from "@/types/pages";
 
 async function getSingleLegalPage(locale: string, slug: string) {
   const data = await fetchData(`query SingleLegalPage {
@@ -24,9 +25,7 @@ async function getSingleLegalPage(locale: string, slug: string) {
 // Generate metadata for the page
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const locale = await getLocale();
   const { slug } = await params;
   const legalPage: LegalPage = await getSingleLegalPage(locale, slug);
@@ -35,11 +34,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPosts({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function SingleLegalPage({ params }: PageProps) {
   const locale = await getLocale();
   const { slug } = await params;
   const legalPage: LegalPage = await getSingleLegalPage(locale, slug);

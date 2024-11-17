@@ -6,6 +6,7 @@ import { fetchData } from "@/utils/fetchData";
 import CategoryHero from "@/components/hero/category_hero";
 
 import "../style.css";
+import { PageProps } from "@/types/pages";
 
 async function getPosts(locale: string, slug: string) {
   const data = await fetchData(`query CategoryPosts {
@@ -48,13 +49,9 @@ async function getPosts(locale: string, slug: string) {
   return data;
 }
 
-export default async function CategoryPosts({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function CategoryPosts({ params }: PageProps) {
   const locale = await getLocale();
-  const { slug } = await params;
+  const { slug } = params;
   const results = await getPosts(locale, slug);
   const { category, posts } = results || {};
 

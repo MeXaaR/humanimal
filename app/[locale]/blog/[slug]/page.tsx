@@ -1,13 +1,13 @@
 import { getLocale } from "next-intl/server";
 import { fetchData } from "@/utils/fetchData";
-import { InferGetStaticPropsType, Metadata, ResolvingMetadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 
 import "./style.css";
 import { PostHero } from "@/components/hero/post_hero";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { SITE_NAME, SITE_URL } from "@/data/constants";
 import { Sources } from "@/components/sources/sources";
-import { getStaticProps } from "next/dist/build/templates/pages";
+import { PageProps } from "@/types/pages";
 
 async function getSinglePost(locale: string, slug: string) {
   const data = await fetchData(`query SinglePost {
@@ -57,12 +57,9 @@ async function getSinglePost(locale: string, slug: string) {
   return data?.post;
 }
 
-type PageProps = InferGetStaticPropsType<typeof getStaticProps>;
-
 // Generate metadata for the page
 export async function generateMetadata(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  { params }: any,
+  { params }: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const locale = await getLocale();
