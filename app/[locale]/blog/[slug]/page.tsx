@@ -57,8 +57,11 @@ async function getSinglePost(locale: string, slug: string) {
 }
 
 type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: {
+    locale: string;
+    slug: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 // Generate metadata for the page
@@ -120,11 +123,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function SinglePostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function SinglePostPage({ params }: Props) {
   const locale = await getLocale();
   const { slug } = await params;
   const post = await getSinglePost(locale, slug);
