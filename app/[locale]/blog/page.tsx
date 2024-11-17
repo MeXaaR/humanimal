@@ -1,5 +1,10 @@
+import { SearchParams } from "next/dist/server/request/search-params";
 import AllPosts from "./all-posts/page";
 
-export default async function BlogPage(props: any) {
-  return <AllPosts {...props} />;
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  return <AllPosts searchParams={searchParams} />;
 }
