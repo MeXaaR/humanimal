@@ -51,7 +51,7 @@ async function getPosts(locale: string, slug: string) {
 
 export default async function CategoryPosts({ params }: PageProps) {
   const locale = await getLocale();
-  const { slug } = params;
+  const { slug } = await params;
   const results = await getPosts(locale, slug);
   const { category, posts } = results || {};
 

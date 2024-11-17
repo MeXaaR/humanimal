@@ -51,7 +51,7 @@ export default async function PostListWrapper({
 }: {
   params: SearchParams;
 }) {
-  const { sort, type } = params;
+  const { sort, type } = await params;
   const locale = await getLocale();
   // Fetch posts from the API
   const posts = await getPosts(locale, sort as string, type as string);
