@@ -68,7 +68,7 @@ export const Header = async () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <ThemeSwitcher />
+              {/* <ThemeSwitcher /> */}
               <Locale />
             </div>
           </div>

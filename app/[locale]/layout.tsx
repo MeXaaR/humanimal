@@ -57,7 +57,7 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
   return (
-    <html lang={navParams.locale}>
+    <html lang={navParams.locale} data-theme="light">
       <body
         className={`${fonts.permanentMarker.variable} ${fonts.georama.variable}`}
       >
