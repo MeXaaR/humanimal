@@ -6,6 +6,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { LOCALES } from "@/data/constants";
 import { PageTransition } from "@/components/layouts/page_transition";
 import { Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import moment from "moment";
 import "moment/locale/fr";
@@ -65,6 +67,8 @@ export default async function RootLayout({
           </GlobalLayout>
         </NextIntlClientProvider>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
