@@ -5,7 +5,6 @@ import { Locale } from "./locale";
 import { Link } from "@/i18n/routing";
 import "./header.css";
 import { links } from "./navlinks";
-import ThemeSwitcher from "../theme/theme_switcher";
 
 export const Header = async () => {
   const t = await getTranslations("Navigation");
@@ -68,7 +67,6 @@ export const Header = async () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              {/* <ThemeSwitcher /> */}
               <Locale />
             </div>
           </div>
