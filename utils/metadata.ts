@@ -39,9 +39,9 @@ export async function generateMetadata(): Promise<Metadata> {
             type: 'website',
             images: [
                 {
-                    url: `${siteUrl}/og-image.jpg`,
-                    width: 1200,
-                    height: 630,
+                    url: `${siteUrl}/public/opengraph/big-logo.png`,
+                    width: 538,
+                    height: 300,
                     alt: SITE_NAME,
                 },
             ],
@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
             card: 'summary_large_image',
             title,
             description,
-            images: [`${siteUrl}/og-image.jpg`],
+            images: [`${siteUrl}/public/opengraph/humanimal.jpg`],
         },
         robots: {
             index: false,
@@ -64,13 +64,13 @@ export async function generateMetadata(): Promise<Metadata> {
             },
         },
         verification: {
-            google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-            yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+            // google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+            // yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
         },
         icons: {
-            icon: '/favicon.ico',
-            shortcut: '/favicon-16x16.png',
-            apple: '/apple-touch-icon.png',
+            icon: '/logos/favicon.ico',
+            shortcut: '/logos/favicon-16x16.png',
+            apple: '/logos/apple-touch-icon.png',
         },
         manifest: '/site.webmanifest',
         viewport: {
