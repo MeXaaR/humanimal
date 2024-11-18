@@ -18,7 +18,7 @@ export default async function SmallPostCard({ post }: { post: Post }) {
           />
         </div>
         <PostTypeLine postType={post.postType} createdAt={post.createdAt} />
-        <h4 className="title is-4 is-secondary">{post.title}</h4>
+        <h3 className="title is-4 is-secondary">{post.title}</h3>
         {post?.category?.map((category) => (
           <CategorieTag category={category} key={category.id} />
         ))}

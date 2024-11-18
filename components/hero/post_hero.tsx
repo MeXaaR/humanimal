@@ -11,7 +11,7 @@ export const PostHero = ({ post }: { post: Post }) => {
         <div className="hero-body container is-max-tablet">
           <div className="block">
             <PostTypeLine postType={post.postType} createdAt={post.createdAt} />
-            <h4 className="title is-4">{post.title}</h4>
+            <h3 className="title is-4">{post.title}</h3>
             {post?.category?.map((category) => (
               <CategorieTag category={category} key={category.id} />
             ))}
