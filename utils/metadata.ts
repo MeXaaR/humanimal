@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/data/constants";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 
 export type ParamsProps = {
@@ -13,13 +12,17 @@ export type ParamsProps = {
 
 export async function generateMetadata(): Promise<Metadata> {
     const locale = await getLocale();
-    const title = SITE_NAME
-    const description = SITE_DESCRIPTION
+    const t = await getTranslations({
+        locale,
+        namespace: "SEO",
+    });
+    const title = t("title")
+    const description = t("description")
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-site.com';
     return {
         title: {
             default: title,
-            template: `%s | ${SITE_NAME}`,
+            template: `%s | ${title}`,
         },
         description,
         metadataBase: new URL(siteUrl),
@@ -34,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title,
             description,
             url: siteUrl,
-            siteName: SITE_NAME,
+            siteName: title,
             locale,
             type: 'website',
             images: [
@@ -42,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
                     url: `${siteUrl}/public/opengraph/big-logo.png`,
                     width: 538,
                     height: 300,
-                    alt: SITE_NAME,
+                    alt: title,
                 },
             ],
         },

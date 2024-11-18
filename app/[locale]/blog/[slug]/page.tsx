@@ -1,11 +1,11 @@
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { fetchData } from "@/utils/fetchData";
 import { Metadata, ResolvingMetadata } from "next";
 
 import "./style.css";
 import { PostHero } from "@/components/hero/post_hero";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { SITE_NAME, SITE_URL } from "@/data/constants";
+import { SITE_URL } from "@/data/constants";
 import { Sources } from "@/components/sources/sources";
 import { PageProps } from "@/types/pages";
 
@@ -65,12 +65,12 @@ export async function generateMetadata(
   const locale = await getLocale();
   const { slug } = await params;
   const post = await getSinglePost(locale, slug);
-
+  const t2 = await getTranslations("SEO");
   // optionally get parent metadata
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: `${SITE_NAME} | ${post.seoOverride?.title || post.title}`,
+    title: `${t2("title")} | ${post.seoOverride?.title || post.title}`,
     description: post.seoOverride?.description || post.excerpt,
     authors: post.author ? [{ name: post.author.name }] : undefined,
     openGraph: {
@@ -90,7 +90,7 @@ export async function generateMetadata(
         ...previousImages,
       ],
       locale: locale,
-      siteName: SITE_NAME,
+      siteName: t2("title"),
     },
     twitter: {
       card: "summary_large_image",
@@ -99,7 +99,7 @@ export async function generateMetadata(
       images: [post.seoOverride?.image?.url || post.coverImage?.url || ""],
     },
     alternates: {
-      canonical: `${SITE_URL}/blog/${post.slug}`,
+      canonical: `${SITE_URL}/${locale}/blog/${post.slug}`,
     },
     category: post.category?.name,
     keywords: [post.category?.name, post.postType?.title].filter(Boolean),

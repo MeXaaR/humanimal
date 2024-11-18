@@ -1,10 +1,9 @@
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { fetchData } from "@/utils/fetchData";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Page } from "@/types/posts";
 import { Metadata } from "next";
-import { SITE_NAME } from "@/data/constants";
 import SimpleHero from "@/components/hero/simple_hero";
 
 async function getAboutPage(locale: string) {
@@ -24,9 +23,10 @@ async function getAboutPage(locale: string) {
 // Generate metadata for the page
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
+  const t2 = await getTranslations("SEO");
   const page: Page = await getAboutPage(locale);
   return {
-    title: `${SITE_NAME} | ${page?.title}`,
+    title: `${t2("title")} | ${page?.title}`,
   };
 }
 

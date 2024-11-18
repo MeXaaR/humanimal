@@ -4,14 +4,14 @@ import PostListWrapper from "@/components/posts/post_list_wrapper";
 import "./style.css";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { SITE_NAME } from "@/data/constants";
 import { PageProps } from "@/types/pages";
 
 // Generate metadata for the page
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Pages");
+  const t2 = await getTranslations("SEO");
   return {
-    title: `${SITE_NAME} | ${t("all_posts")}`,
+    title: `${t2("title")} | ${t("all_posts")}`,
   };
 }
 

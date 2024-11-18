@@ -1,11 +1,16 @@
-import { SITE_DESCRIPTION, SITE_NAME } from '@/data/constants'
+import { getLocale, getTranslations } from 'next-intl/server'
 import type { MetadataRoute } from 'next'
 
-export default function manifest(): MetadataRoute.Manifest {
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+    const locale = await getLocale();
+    const t = await getTranslations({
+        locale,
+        namespace: "SEO",
+    });
     return {
-        name: SITE_NAME,
-        short_name: SITE_NAME,
-        description: SITE_DESCRIPTION,
+        name: t("title"),
+        short_name: t("title"),
+        description: t("description"),
         start_url: '/fr',
         display: 'standalone',
         background_color: '#ffffff',
@@ -15,17 +20,17 @@ export default function manifest(): MetadataRoute.Manifest {
         prefer_related_applications: false,
         icons: [
             {
-                src: '/icons/icon-192x192.png',
+                src: '/logos/icon-192x192.png',
                 sizes: '192x192',
                 type: 'image/png',
             },
             {
-                src: '/icons/icon-384x384.png',
+                src: '/logos/icon-384x384.png',
                 sizes: '384x384',
                 type: 'image/png',
             },
             {
-                src: '/icons/icon-512x512.png',
+                src: '/logos/icon-512x512.png',
                 sizes: '512x512',
                 type: 'image/png',
             },

@@ -1,7 +1,12 @@
 {
+    "SEO": {
+        "title": "Humanimal",
+        "description": "Humanimal explore le bien-être naturel à travers le sport, la nutrition et la santé mentale. Découvrez des conseils scientifiques et des expériences personnelles pour une vie plus saine et équilibrée."
+    },
     "HomePage": {
         "title": "Devenez un Humanimal!",
-        "subtitle": "Humanimal vous guide dans une exploration scientifique et naturelle du bien-être. Rejoignez-nous pour des conseils, des formations et des pratiques qui respectent votre corps et libèrent votre potentiel naturel.",
+        "subtitle": "Une approche scientifique pour une vie plus saine, basée sur des données fiables et des recherches actuelles. Accédez à des informations de qualité pour faire des choix éclairés en matière de santé.",
+        "subtitle2": "Unir l’humain et le naturel pour un équilibre parfait entre performance, santé et bonheur. Découvrez comment harmoniser vos aspirations personnelles avec un mode de vie sain.",
         "latest": "Derniers articles",
         "featured": "Articles en vedette"
     },
